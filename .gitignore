@@ -77,5 +77,4 @@ id_rsa
 id_ed25519
 
 # Folders
-public
 node_modules
