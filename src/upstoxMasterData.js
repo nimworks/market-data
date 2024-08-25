@@ -88,7 +88,18 @@ function jsonToCsv(jsonData) {
 		const csvHeader = 'instrument_key,trading_symbol,name,expiry,lot_size,instrument_type\n';
 		const csvRows = jsonArray
 			// .filter((item) => ['EQ', 'BE', 'CE', 'PE', 'FUT', 'B', 'X', 'XT'].includes(item.instrument_type))	//only include these types
-			.filter((item) => !['F', 'G', 'SG', 'N0', 'ZQ', 'AA', 'AB'].includes(item.instrument_type)) //ignore these types which have symbols with arbitrary name-number combo
+			// .filter((item) => !['F','G','SG','N0','ZQ','AA','AB','AL','AZ','BW','GS','N0','N1','N2','N3','N4','N5','NX','NC','NR','NT','SG','TB','YJ','Y3','YR','YW','YY','Z4','Z8','ZL','ZT','ZQ'].includes(item.instrument_type)) //ignore these types which have symbols with arbitrary name-number combo
+			//IGNORE SYMBOLS STARTING WITH 0 OR STARTING AND ENDING WITH A NUMBER
+			// .filter((item.trading_symbol) => {
+			// 	const startsWithZero = item.trading_symbol.startsWith('0');
+			// 	const startsAndEndsWithNumber = /^\d.*\d$/.test(item.trading_symbol);
+			// 	return !startsWithZero && !startsAndEndsWithNumber;
+			// })
+			// .filter(({ trading_symbol }) => !trading_symbol.startsWith('0') && !/^\d.*\d$/.test(trading_symbol)) //same as above but shortened
+			.filter(
+				({ trading_symbol, instrument_type }) =>
+					!trading_symbol.startsWith('0') && !/^\d.*\d$/.test(trading_symbol) && !['F', 'G'].includes(instrument_type),
+			)
 			.map((item) => `${item.instrument_key},${item.trading_symbol},${item.name},${item.expiry || ''},${item.lot_size},${item.instrument_type}`)
 			.join('\n');
 
