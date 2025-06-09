@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Angel One NFO key generator</title>
+		<style>
+			body {
+				background: #333;
+				color: #999;
+			}
+			.sampleDataInp {
+				min-width: 100%;
+				min-height: 60vh;
+				background: #333;
+				color: #999;
+				white-space: nowrap;
+				overflow: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<p>We generate a unique cross-broker key for NFO instruments</p>
+		<!-- AngelOne -->
+		<h2>Angel One</h2>
+		<h4>AngelOne sample JSON data</h4>
+		<!-- https://margincalculator.angelbroking.com/OpenAPI_File/files/OpenAPIScripMaster.json -->
+		<textarea class="sampleDataInp" id="txtDataInp_angelOne" name="txtDataInp_angelOne">
+[
+	{"token":"99920003","symbol":"MCXGOLDEX","name":"MCXGOLDEX","expiry":"","strike":"0.000000","lotsize":"1","instrumenttype":"AMXIDX","exch_seg":"MCX","tick_size":"0.000000"},	//MCX Index
+	{"token":"287","symbol":"SLVERDELHICOM","name":"SLVERDELHI","expiry":"","strike":"0.000000","lotsize":"5","instrumenttype":"COMDTY","exch_seg":"MCX","tick_size":"100.000000"},	//MCX commodity
+	{"token":"168","symbol":"MUSTRDSEEDCOM","name":"MUSTRDSEED","expiry":"","strike":"0.000000","lotsize":"10","instrumenttype":"COMDTY","exch_seg":"MCX","tick_size":"5.000000"},	//MCX commodity
+	{"token":"440576","symbol":"SILVERMIC30JUN25FUT","name":"SILVERMIC","expiry":"30JUN2025","strike":"0.000000","lotsize":"1","instrumenttype":"FUTCOM","exch_seg":"MCX","tick_size":"100.000000"},	//MCX commodity futures
+	{"token":"440965","symbol":"GOLD23SEP2575800CE","name":"GOLD","expiry":"23SEP2025","strike":"7580000.000000","lotsize":"1","instrumenttype":"OPTFUT","exch_seg":"MCX","tick_size":"50.000000"},		//MCX commodity options
+	{"token":"99926033","symbol":"Nifty 200","name":"NIFTY 200","expiry":"","strike":"0.000000","lotsize":"1","instrumenttype":"AMXIDX","exch_seg":"NSE","tick_size":"0.000000"},	//NSE Index
+	{ "token": "50849", "symbol": "NIFTY19JUN2522850CE", "name": "NIFTY", "expiry": "19JUN2025", "strike": "2285000.000000", "lotsize": "75", "instrumenttype": "OPTIDX", "exch_seg": "NFO", "tick_size": "5.000000" },	//Index options
+	{ "token": "50856", "symbol": "NIFTY19JUN2522950PE", "name": "NIFTY", "expiry": "19JUN2025", "strike": "2295000.000000", "lotsize": "75", "instrumenttype": "OPTIDX", "exch_seg": "NFO", "tick_size": "5.000000" },
+	{"token":"53215","symbol":"MIDCPNIFTY31JUL25FUT","name":"MIDCPNIFTY","expiry":"31JUL2025","strike":"-1.000000","lotsize":"140","instrumenttype":"FUTIDX","exch_seg":"NFO","tick_size":"5.000000"},	//Index futures
+	{"token":"56782","symbol":"BANKNIFTY26JUN25FUT","name":"BANKNIFTY","expiry":"26JUN2025","strike":"-1.000000","lotsize":"30","instrumenttype":"FUTIDX","exch_seg":"NFO","tick_size":"20.000000"},
+	{ "token": "53119", "symbol": "ABFRL26JUN25100PE", "name": "ABFRL", "expiry": "26JUN2025", "strike": "10000.000000", "lotsize": "2600", "instrumenttype": "OPTSTK", "exch_seg": "NFO", "tick_size": "5.000000" },	//Stock options
+	{ "token": "53127", "symbol": "ABFRL26JUN25110PE", "name": "ABFRL", "expiry": "26JUN2025", "strike": "11000.000000", "lotsize": "2600", "instrumenttype": "OPTSTK", "exch_seg": "NFO", "tick_size": "5.000000" },
+	{ "token": "53246", "symbol": "ASTRAL31JUL25FUT", "name": "ASTRAL", "expiry": "31JUL2025", "strike": "-1.000000", "lotsize": "425", "instrumenttype": "FUTSTK", "exch_seg": "NFO", "tick_size": "10.000000" },		//Stock futures
+	{ "token": "53247", "symbol": "ATGL31JUL25FUT", "name": "ATGL", "expiry": "31JUL2025", "strike": "-1.000000", "lotsize": "875", "instrumenttype": "FUTSTK", "exch_seg": "NFO", "tick_size": "5.000000" },
+	{"token":"53225","symbol":"ADANIGREEN31JUL25FUT","name":"ADANIGREEN","expiry":"31JUL2025","strike":"-1.000000","lotsize":"600","instrumenttype":"FUTSTK","exch_seg":"NFO","tick_size":"10.000000"},
+	{"token":"13211","symbol":"JAGRAN-EQ","name":"JAGRAN","expiry":"","strike":"-1.000000","lotsize":"1","instrumenttype":"","exch_seg":"NSE","tick_size":"1.000000"},		//NSE Equity
+	{"token":"99919053","symbol":"REALTY","name":"S&P BSE REALTY","expiry":"","strike":"0.000000","lotsize":"1","instrumenttype":"AMXIDX","exch_seg":"BSE","tick_size":"0.000000"},	//BSE Index
+	{"token":"500060","symbol":"BIRLACABLE","name":"BIRLACABLE","expiry":"","strike":"-1.000000","lotsize":"1","instrumenttype":"","exch_seg":"BSE","tick_size":"5.000000"},		//BSE Equity
+	{"token":"SUNOIL","symbol":"SUNOIL","name":"SUNOIL","expiry":"","strike":"-1.000000","lotsize":"1","instrumenttype":"COMDTY","exch_seg":"NCDEX","tick_size":"1.000000"},	//Commodity (We shall list under MCX)
+	{"token":"8001","symbol":"EURINR25704100.5CE","name":"EURINR","expiry":"04JUL2025","strike":"1005000000.000000","lotsize":"1","instrumenttype":"OPTCUR","exch_seg":"CDS","tick_size":"25000.000000"},	//Currency Option
+	{"token":"3717","symbol":"GBPINR25SEP112.75PE","name":"GBPINR","expiry":"26SEP2025","strike":"1127500000.000000","lotsize":"1","instrumenttype":"OPTCUR","exch_seg":"CDS","tick_size":"25000.000000"},
+	{"token":"3712","symbol":"GBPINR25SEP112.75CE","name":"GBPINR","expiry":"26SEP2025","strike":"1127500000.000000","lotsize":"1","instrumenttype":"OPTCUR","exch_seg":"CDS","tick_size":"25000.000000"},
+	{"token":"1187","symbol":"GBPUSD25JULFUT","name":"GBPUSD","expiry":"29JUL2025","strike":"-1.000000","lotsize":"1","instrumenttype":"FUTCUR","exch_seg":"CDS","tick_size":"1000.000000"}		//Currency futures
+]
+		 </textarea
+		>
+		<button id="angelOneCta">Print formated</button>
+		<script>
+			((d) => {
+				//converts date from '31JUL2025' to '2025-07-31' format
+				/* function convertDateFormat_old(inputDateStr) {
+					const months = {
+						JAN: '01',
+						FEB: '02',
+						MAR: '03',
+						APR: '04',
+						MAY: '05',
+						JUN: '06',
+						JUL: '07',
+						AUG: '08',
+						SEP: '09',
+						OCT: '10',
+						NOV: '11',
+						DEC: '12',
+					};
+
+					// Extract day, month, and year
+					let day = inputDateStr.slice(0, 2);
+					let month = months[inputDateStr.slice(2, 5).toUpperCase()];
+					let year = inputDateStr.slice(5);
+
+					return `${year}-${month}-${day}`;
+				} */
+				/* function convertDateFormat(inputDateStr) {
+					const date = new Date(inputDateStr);
+					const year = date.getFullYear();
+					const month = String(date.getMonth() + 1).padStart(2, '0');
+					const day = String(date.getDate()).padStart(2, '0');
+					return `${year}-${month}-${day}`;
+				} */
+				/** Converts date-string to a standardized format (yyyy-mm-dd) used in cross-broker std primary-key */
+				function _convertTo_stdPk_dateFormat(inputDateStr) {
+					const date = new Date(inputDateStr);
+					const year = date.getFullYear();
+					const month = String(date.getMonth() + 1).padStart(2, '0');
+					const day = String(date.getDate()).padStart(2, '0');
+					return `${year}-${month}-${day}`;
+				}
+				///
+				///
+				///
+				const aoCta = d.getElementById('angelOneCta');
+				aoCta.onclick = function () {
+					const txtData = d.getElementById('txtDataInp_angelOne').value.replace(/\s*\/\/.*\n/gim, ''); //we first strip the comments we had added for documenting the lines
+					const instrumentsDataAry = JSON.parse(txtData);
+					// console.log(instrumentsDataAry);
+					const consoleTablePrintAry_NSE = [],
+						consoleTablePrintAry_BSE = [],
+						consoleTablePrintAry_NFO = [],
+						consoleTablePrintAry_CDS = [],
+						consoleTablePrintAry_MCX = [];
+					// instrumentsDataAry.forEach(({ token, symbol, name, exch_seg, instrumenttype, expiry, strike, lotsize }) => {
+					// 	let pk = name;
+					// 	// let isNotTradeable = false;
+					// 	if (exch_seg == 'NFO') {
+					// 		const exp = convertDateFormat(expiry);
+					// 		// if (instrumenttype == 'FUTSTK' || instrumenttype == 'FUTIDX') {
+					// 		if (instrumenttype.startsWith('FUT')) {
+					// 			pk += `|F|${exp}|`;
+					// 		}
+					// 		// if (instrumenttype == 'OPTSTK' || instrumenttype == 'OPTIDX') {
+					// 		if (instrumenttype.startsWith('OPT')) {
+					// 			// pk += `|${/CE$/.test(symbol)?'C':'P'}|${exp}|${strike.replace('00.000000','')}`;
+					// 			pk += `|${symbol.endsWith('CE') ? 'C' : 'P'}|${exp}|${strike.replace('00.000000', '')}`;
+					// 		}
+					// 	}
+
+					// 	const data = `${token},${lotsize},${instrumenttype.endsWith('IDX') ? 1 : ''}`; //token,lotsize,whetherNotTradeable
+					// 	consoleTablePrintAry.push({ key: pk, value: data });
+					// });
+					instrumentsDataAry.forEach(({ token, symbol, name, exch_seg, instrumenttype, expiry, strike, lotsize }) => {
+						//for NSE instruments, only save the 'EQ' ie equity type instruments and ignore other like BL
+						// if (exch_seg === 'NSE' && symbol.endsWith('-EQ')) nseTable.put(`${token},${name},,,${lotsize},NSE`, name);
+						if (exch_seg === 'NSE') {
+							// if (instrumenttype == 'AMXIDX') {
+							if (instrumenttype.endsWith('IDX')) {
+								consoleTablePrintAry_NSE.push({ key: name, value: `${token},` }); //nseTable.put(`${token},,1`, name);
+							} else if (symbol.endsWith('-EQ')) {
+								consoleTablePrintAry_NSE.push({ key: name, value: `${token},${lotsize}` }); //nseTable.put(`${token},${lotsize},`, name);
+							}
+						} else if (exch_seg === 'BSE') {
+							// if (instrumenttype.endsWith('IDX')) {
+							if (instrumenttype === 'AMXIDX') {
+								consoleTablePrintAry_BSE.push({ key: name, value: `${token},` }); //nseTable.put(`${token},,1`, name);
+							} else {
+								//instrumenttype === ''
+								consoleTablePrintAry_BSE.push({ key: name, value: `${token},${lotsize}` }); //bseTable.put(`${token},${lotsize},`, name);
+							}
+						} else if (exch_seg === 'NFO') {
+							// if (instrumenttype == 'OPTSTK' || instrumenttype == 'OPTIDX') {
+							if (instrumenttype.startsWith('OPT')) {
+								//// nfoTable.put(`${token},${lotsize},${instrumenttype.endsWith('IDX') ? 1 : ''}`, pk);
+								// nfoTable.put(
+								// 	`${token},${lotsize},`,
+								// 	`${name}|${symbol.endsWith('CE') ? 'C' : 'P'}|${_convertTo_stdPk_dateFormat(expiry)}|${strike.toString().replace('00.000000', '')}`, //pk
+								// );
+								consoleTablePrintAry_NFO.push({
+									key: `${name}|${symbol.endsWith('CE') ? 'C' : 'P'}|${_convertTo_stdPk_dateFormat(expiry)}|${strike.toString().replace('00.000000', '')}`,
+									value: `${token},${lotsize}`,
+								});
+							} else if (instrumenttype.startsWith('FUT')) {
+								//// if (instrumenttype == 'FUTSTK' || instrumenttype == 'FUTIDX') {
+								// nfoTable.put(
+								// 	`${token},${lotsize},`,
+								// 	`${name}|F|${_convertTo_stdPk_dateFormat(expiry)}|`, //pk
+								// );
+								consoleTablePrintAry_NFO.push({ key: `${name}|F|${_convertTo_stdPk_dateFormat(expiry)}|`, value: `${token},${lotsize}` });
+							}
+						} else if (exch_seg === 'CDS') {
+							if (instrumenttype === 'OPTCUR') {
+								// cdsTable.put(
+								// 	`${token},${lotsize},`,
+								// 	`${name}|${symbol.endsWith('CE') ? 'C' : 'P'}|${_convertTo_stdPk_dateFormat(expiry)}|${Number(strike) / 10000000}`, //pk
+								// );
+								consoleTablePrintAry_CDS.push({
+									key: `${name}|${symbol.endsWith('CE') ? 'C' : 'P'}|${_convertTo_stdPk_dateFormat(expiry)}|${Number(strike) / 10000000}`,
+									value: `${token},${lotsize}`,
+								});
+							} else if (instrumenttype === 'FUTCUR') {
+								// cdsTable.put(`${token},${lotsize},`, `${name}|F|${_convertTo_stdPk_dateFormat(expiry)}|`);
+								consoleTablePrintAry_CDS.push({ key: `${name}|F|${_convertTo_stdPk_dateFormat(expiry)}|`, value: `${token},${lotsize}` });
+							}
+						} else if (exch_seg === 'MCX') {
+							if (instrumenttype === 'OPTFUT') {
+								// //else if (exch_seg === 'MCX' && instrumenttype.startsWith('OPT')) {
+								// mcxTable.put(
+								// 	`${token},${lotsize},`,
+								// 	`${name}|${symbol.endsWith('CE') ? 'C' : 'P'}|${_convertTo_stdPk_dateFormat(expiry)}|${strike.toString().replace('00.000000', '')}`, //primary key
+								// );
+								consoleTablePrintAry_MCX.push({
+									key: `${name}|${symbol.endsWith('CE') ? 'C' : 'P'}|${_convertTo_stdPk_dateFormat(expiry)}|${strike.toString().replace('00.000000', '')}`,
+									value: `${token},${lotsize}`,
+								});
+							} else if (instrumenttype === 'FUTCOM') {
+								//else if (exch_seg === 'MCX' && instrumenttype.startsWith('FUT')) {
+								// mcxTable.put(`${token},${lotsize},`, `${name}|F|${_convertTo_stdPk_dateFormat(expiry)}|`);
+								consoleTablePrintAry_MCX.push({ key: `${name}|F|${_convertTo_stdPk_dateFormat(expiry)}|`, value: `${token},${lotsize}` });
+							}
+						} //else if (exch_seg === 'NCDEX'){}
+					});
+					console.log('===== NSE =====');
+					console.table(consoleTablePrintAry_NSE);
+					console.log('===== BSE =====');
+					console.table(consoleTablePrintAry_BSE);
+					console.log('===== NFO =====');
+					console.table(consoleTablePrintAry_NFO);
+					console.log('===== CDS =====');
+					console.table(consoleTablePrintAry_CDS);
+					console.log('===== MCX =====');
+					console.table(consoleTablePrintAry_MCX);
+				};
+			})(document);
+		</script>
+	</body>
+</html>

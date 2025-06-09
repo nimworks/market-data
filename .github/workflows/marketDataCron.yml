@@ -36,6 +36,16 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
+
+            # Cache Node.js
+            # - name: Cache Node.js
+            #   uses: actions/cache@v2
+            #   with:
+            #       path: ~/.cache/node
+            #       key: ${{ runner.os }}-node-${{ hashFiles('**/*.js') }}
+            #       restore-keys: |
+            #           ${{ runner.os }}-node-
+
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
               with:
@@ -51,7 +61,17 @@ jobs:
               #run: npm ci
               #run: npm run build --if-present
               # run: npm test
-              run: node src/upstoxMasterData.js
+              # run: node src/upstox/upstoxMasterData.js
+              # Run two scripts sequentially
+              # run: |
+              #   node src/myFile1.js
+              #   node src/myFile2.js
+              # Run two scripts in parallel
+              run: |
+                  node src/upstox/upstoxMasterData.js &
+                  node src/angelOne/angelOneMasterData.js &
+                  wait
+              # The & operator runs the commands in the background. wait ensures that the GitHub Action waits for both processes to complete before moving to the next step.
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3

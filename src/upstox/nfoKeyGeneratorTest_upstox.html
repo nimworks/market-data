@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Upstox NFO key generator</title>
+		<style>
+			body {
+				background: #333;
+				color: #999;
+			}
+			.sampleDataInp {
+				min-width: 100%;
+				min-height: 50vh;
+				background: #333;
+				color: #999;
+				white-space: nowrap;
+				overflow: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<p>We generate a unique cross-broker key for NFO instruments</p>
+		<!-- AngelOne -->
+		<h2>Upstox</h2>
+		<h4>NSE sample JSON data</h4>
+		<a href="https://assets.upstox.com/market-quote/instruments/exchange/NSE.json.gz">NSE master data</a>
+		<p>Note that NSE holds data from NFO and CDS too</p>
+		<p>Note that when storing the instrument_key, we strip of the segment part and prepend it in the frontend.</p>
+		<textarea class="sampleDataInp" id="txtDataInp_upstox_NSE" name="txtDataInp_upstox_NSE">
+[
+  {
+    "weekly": false,
+    "segment": "NCD_FO",
+    "name": "JPYINR",
+    "exchange": "NSE",
+    "expiry": 1774636199000,
+    "instrument_type": "CE",
+    "asset_symbol": "JPYINR",
+    "underlying_symbol": "JPYINR",
+    "instrument_key": "NCD_FO|14294",
+    "lot_size": 1,
+    "freeze_quantity": 10000,
+    "exchange_token": "14294",
+    "minimum_lot": 1,
+    "tick_size": 0.25,
+    "asset_type": "CUR",
+    "underlying_type": "CUR",
+    "trading_symbol": "JPYINR 61 CE 27 MAR 26",
+    "strike_price": 61,
+    "qty_multiplier": 1000
+  },
+  {
+    "weekly": false,
+    "segment": "NCD_FO",
+    "name": "JPYINR",
+    "exchange": "NSE",
+    "expiry": 1774636199000,
+    "instrument_type": "PE",
+    "asset_symbol": "JPYINR",
+    "underlying_symbol": "JPYINR",
+    "instrument_key": "NCD_FO|14295",
+    "lot_size": 1,
+    "freeze_quantity": 10000,
+    "exchange_token": "14295",
+    "minimum_lot": 1,
+    "tick_size": 0.25,
+    "asset_type": "CUR",
+    "underlying_type": "CUR",
+    "trading_symbol": "JPYINR 61 PE 27 MAR 26",
+    "strike_price": 61,
+    "qty_multiplier": 1000
+  },
+  {
+    "segment": "NSE_EQ",
+    "name": "GTPL HATHWAY LIMITED",
+    "exchange": "NSE",
+    "isin": "INE869I01013",
+    "instrument_type": "EQ",
+    "instrument_key": "NSE_EQ|INE869I01013",
+    "lot_size": 1,
+    "freeze_quantity": 100000,
+    "exchange_token": "21195",
+    "tick_size": 1,
+    "trading_symbol": "GTPL",
+    "short_name": "GTPL Hathway",
+    "qty_multiplier": 1,
+    "security_type": "NORMAL"
+  },
+  {
+    "weekly": true,
+    "segment": "NSE_FO",
+    "name": "NIFTY",
+    "exchange": "NSE",
+    "expiry": 1750357799000,
+    "instrument_type": "CE",
+    "asset_symbol": "NIFTY",
+    "underlying_symbol": "NIFTY",
+    "instrument_key": "NSE_FO|50917",
+    "lot_size": 75,
+    "freeze_quantity": 1800,
+    "exchange_token": "50917",
+    "minimum_lot": 75,
+    "asset_key": "NSE_INDEX|Nifty 50",
+    "underlying_key": "NSE_INDEX|Nifty 50",
+    "tick_size": 5,
+    "asset_type": "INDEX",
+    "underlying_type": "INDEX",
+    "trading_symbol": "NIFTY 23550 CE 19 JUN 25",
+    "strike_price": 23550,
+    "qty_multiplier": 1
+  },
+  {
+    "weekly": true,
+    "segment": "NSE_FO",
+    "name": "NIFTY",
+    "exchange": "NSE",
+    "expiry": 1750357799000,
+    "instrument_type": "PE",
+    "asset_symbol": "NIFTY",
+    "underlying_symbol": "NIFTY",
+    "instrument_key": "NSE_FO|50918",
+    "lot_size": 75,
+    "freeze_quantity": 1800,
+    "exchange_token": "50918",
+    "minimum_lot": 75,
+    "asset_key": "NSE_INDEX|Nifty 50",
+    "underlying_key": "NSE_INDEX|Nifty 50",
+    "tick_size": 5,
+    "asset_type": "INDEX",
+    "underlying_type": "INDEX",
+    "trading_symbol": "NIFTY 23550 PE 19 JUN 25",
+    "strike_price": 23550,
+    "qty_multiplier": 1
+  },
+  {
+    "weekly": false,
+    "segment": "NCD_FO",
+    "name": "GBPINR",
+    "exchange": "NSE",
+    "expiry": 1767032999000,
+    "instrument_type": "PE",
+    "asset_symbol": "GBPINR",
+    "underlying_symbol": "GBPINR",
+    "instrument_key": "NCD_FO|14277",
+    "lot_size": 1,
+    "freeze_quantity": 10000,
+    "exchange_token": "14277",
+    "minimum_lot": 1,
+    "tick_size": 0.25,
+    "asset_type": "CUR",
+    "underlying_type": "CUR",
+    "trading_symbol": "GBPINR 118.25 PE 29 DEC 25",
+    "strike_price": 118.25,
+    "qty_multiplier": 1000
+  },
+  {
+    "weekly": false,
+    "segment": "NCD_FO",
+    "name": "GBPINR",
+    "exchange": "NSE",
+    "expiry": 1767032999000,
+    "instrument_type": "CE",
+    "asset_symbol": "GBPINR",
+    "underlying_symbol": "GBPINR",
+    "instrument_key": "NCD_FO|14274",
+    "lot_size": 1,
+    "freeze_quantity": 10000,
+    "exchange_token": "14274",
+    "minimum_lot": 1,
+    "tick_size": 0.25,
+    "asset_type": "CUR",
+    "underlying_type": "CUR",
+    "trading_symbol": "GBPINR 118 CE 29 DEC 25",
+    "strike_price": 118,
+    "qty_multiplier": 1000
+  },
+  {
+    "weekly": false,
+    "segment": "NCD_FO",
+    "name": "GBPINR",
+    "exchange": "NSE",
+    "expiry": 1767032999000,
+    "instrument_type": "PE",
+    "asset_symbol": "GBPINR",
+    "underlying_symbol": "GBPINR",
+    "instrument_key": "NCD_FO|14275",
+    "lot_size": 1,
+    "freeze_quantity": 10000,
+    "exchange_token": "14275",
+    "minimum_lot": 1,
+    "tick_size": 0.25,
+    "asset_type": "CUR",
+    "underlying_type": "CUR",
+    "trading_symbol": "GBPINR 118 PE 29 DEC 25",
+    "strike_price": 118,
+    "qty_multiplier": 1000
+  },
+  {
+    "weekly": false,
+    "segment": "NCD_FO",
+    "name": "GBPINR",
+    "exchange": "NSE",
+    "expiry": 1767032999000,
+    "instrument_type": "CE",
+    "asset_symbol": "GBPINR",
+    "underlying_symbol": "GBPINR",
+    "instrument_key": "NCD_FO|14276",
+    "lot_size": 1,
+    "freeze_quantity": 10000,
+    "exchange_token": "14276",
+    "minimum_lot": 1,
+    "tick_size": 0.25,
+    "asset_type": "CUR",
+    "underlying_type": "CUR",
+    "trading_symbol": "GBPINR 118.25 CE 29 DEC 25",
+    "strike_price": 118.25,
+    "qty_multiplier": 1000
+  },
+  {
+    "segment": "NSE_EQ",
+    "name": "SUPRAJIT ENGINEERING LTD",
+    "exchange": "NSE",
+    "isin": "INE399C01030",
+    "instrument_type": "EQ",
+    "instrument_key": "NSE_EQ|INE399C01030",
+    "lot_size": 1,
+    "freeze_quantity": 100000,
+    "exchange_token": "11689",
+    "tick_size": 5,
+    "trading_symbol": "SUPRAJIT",
+    "short_name": "Suprajit Engineering",
+    "qty_multiplier": 1,
+    "security_type": "NORMAL"
+  },
+  {
+    "weekly": false,
+    "segment": "NSE_FO",
+    "name": "L&T FINANCE LIMITED",
+    "exchange": "NSE",
+    "expiry": 1750962599000,
+    "instrument_type": "PE",
+    "asset_symbol": "LTF",
+    "underlying_symbol": "LTF",
+    "instrument_key": "NSE_FO|115506",
+    "lot_size": 4462,
+    "freeze_quantity": 133860,
+    "exchange_token": "115506",
+    "minimum_lot": 4462,
+    "asset_key": "NSE_EQ|INE498L01015",
+    "underlying_key": "NSE_EQ|INE498L01015",
+    "tick_size": 5,
+    "asset_type": "EQUITY",
+    "underlying_type": "EQUITY",
+    "trading_symbol": "LTF 185 PE 26 JUN 25",
+    "strike_price": 185,
+    "qty_multiplier": 1
+  },
+  {
+    "weekly": false,
+    "segment": "NSE_FO",
+    "name": "L&T FINANCE LIMITED",
+    "exchange": "NSE",
+    "expiry": 1750962599000,
+    "instrument_type": "CE",
+    "asset_symbol": "LTF",
+    "underlying_symbol": "LTF",
+    "instrument_key": "NSE_FO|115507",
+    "lot_size": 4462,
+    "freeze_quantity": 133860,
+    "exchange_token": "115507",
+    "minimum_lot": 4462,
+    "asset_key": "NSE_EQ|INE498L01015",
+    "underlying_key": "NSE_EQ|INE498L01015",
+    "tick_size": 5,
+    "asset_type": "EQUITY",
+    "underlying_type": "EQUITY",
+    "trading_symbol": "LTF 190 CE 26 JUN 25",
+    "strike_price": 190,
+    "qty_multiplier": 1
+  },
+  {
+    "weekly": false,
+    "segment": "NSE_FO",
+    "name": "L&T FINANCE LIMITED",
+    "exchange": "NSE",
+    "expiry": 1750962599000,
+    "instrument_type": "PE",
+    "asset_symbol": "LTF",
+    "underlying_symbol": "LTF",
+    "instrument_key": "NSE_FO|115504",
+    "lot_size": 4462,
+    "freeze_quantity": 133860,
+    "exchange_token": "115504",
+    "minimum_lot": 4462,
+    "asset_key": "NSE_EQ|INE498L01015",
+    "underlying_key": "NSE_EQ|INE498L01015",
+    "tick_size": 5,
+    "asset_type": "EQUITY",
+    "underlying_type": "EQUITY",
+    "trading_symbol": "LTF 180 PE 26 JUN 25",
+    "strike_price": 180,
+    "qty_multiplier": 1
+  },
+  {
+    "weekly": false,
+    "segment": "NSE_FO",
+    "name": "L&T FINANCE LIMITED",
+    "exchange": "NSE",
+    "expiry": 1750962599000,
+    "instrument_type": "CE",
+    "asset_symbol": "LTF",
+    "underlying_symbol": "LTF",
+    "instrument_key": "NSE_FO|115505",
+    "lot_size": 4462,
+    "freeze_quantity": 133860,
+    "exchange_token": "115505",
+    "minimum_lot": 4462,
+    "asset_key": "NSE_EQ|INE498L01015",
+    "underlying_key": "NSE_EQ|INE498L01015",
+    "tick_size": 5,
+    "asset_type": "EQUITY",
+    "underlying_type": "EQUITY",
+    "trading_symbol": "LTF 185 CE 26 JUN 25",
+    "strike_price": 185,
+    "qty_multiplier": 1
+  },
+  {
+    "weekly": false,
+    "segment": "NSE_FO",
+    "name": "L&T FINANCE LIMITED",
+    "exchange": "NSE",
+    "expiry": 1750962599000,
+    "instrument_type": "PE",
+    "asset_symbol": "LTF",
+    "underlying_symbol": "LTF",
+    "instrument_key": "NSE_FO|115508",
+    "lot_size": 4462,
+    "freeze_quantity": 133860,
+    "exchange_token": "115508",
+    "minimum_lot": 4462,
+    "asset_key": "NSE_EQ|INE498L01015",
+    "underlying_key": "NSE_EQ|INE498L01015",
+    "tick_size": 5,
+    "asset_type": "EQUITY",
+    "underlying_type": "EQUITY",
+    "trading_symbol": "LTF 190 PE 26 JUN 25",
+    "strike_price": 190,
+    "qty_multiplier": 1
+  },
+  {
+    "weekly": false,
+    "segment": "NSE_FO",
+    "name": "L&T FINANCE LIMITED",
+    "exchange": "NSE",
+    "expiry": 1750962599000,
+    "instrument_type": "CE",
+    "asset_symbol": "LTF",
+    "underlying_symbol": "LTF",
+    "instrument_key": "NSE_FO|115509",
+    "lot_size": 4462,
+    "freeze_quantity": 133860,
+    "exchange_token": "115509",
+    "minimum_lot": 4462,
+    "asset_key": "NSE_EQ|INE498L01015",
+    "underlying_key": "NSE_EQ|INE498L01015",
+    "tick_size": 5,
+    "asset_type": "EQUITY",
+    "underlying_type": "EQUITY",
+    "trading_symbol": "LTF 195 CE 26 JUN 25",
+    "strike_price": 195,
+    "qty_multiplier": 1
+  },
+  {
+    "weekly": true,
+    "segment": "NSE_FO",
+    "name": "NIFTY",
+    "exchange": "NSE",
+    "expiry": 1750357799000,
+    "instrument_type": "PE",
+    "asset_symbol": "NIFTY",
+    "underlying_symbol": "NIFTY",
+    "instrument_key": "NSE_FO|50900",
+    "lot_size": 75,
+    "freeze_quantity": 1800,
+    "exchange_token": "50900",
+    "minimum_lot": 75,
+    "asset_key": "NSE_INDEX|Nifty 50",
+    "underlying_key": "NSE_INDEX|Nifty 50",
+    "tick_size": 5,
+    "asset_type": "INDEX",
+    "underlying_type": "INDEX",
+    "trading_symbol": "NIFTY 23500 PE 19 JUN 25",
+    "strike_price": 23500,
+    "qty_multiplier": 1
+  },
+  {
+    "weekly": false,
+    "segment": "NSE_FO",
+    "name": "L&T FINANCE LIMITED",
+    "exchange": "NSE",
+    "expiry": 1750962599000,
+    "instrument_type": "PE",
+    "asset_symbol": "LTF",
+    "underlying_symbol": "LTF",
+    "instrument_key": "NSE_FO|115502",
+    "lot_size": 4462,
+    "freeze_quantity": 133860,
+    "exchange_token": "115502",
+    "minimum_lot": 4462,
+    "asset_key": "NSE_EQ|INE498L01015",
+    "underlying_key": "NSE_EQ|INE498L01015",
+    "tick_size": 5,
+    "asset_type": "EQUITY",
+    "underlying_type": "EQUITY",
+    "trading_symbol": "LTF 175 PE 26 JUN 25",
+    "strike_price": 175,
+    "qty_multiplier": 1
+  },
+  {
+    "weekly": false,
+    "segment": "NSE_FO",
+    "name": "L&T FINANCE LIMITED",
+    "exchange": "NSE",
+    "expiry": 1750962599000,
+    "instrument_type": "CE",
+    "asset_symbol": "LTF",
+    "underlying_symbol": "LTF",
+    "instrument_key": "NSE_FO|115503",
+    "lot_size": 4462,
+    "freeze_quantity": 133860,
+    "exchange_token": "115503",
+    "minimum_lot": 4462,
+    "asset_key": "NSE_EQ|INE498L01015",
+    "underlying_key": "NSE_EQ|INE498L01015",
+    "tick_size": 5,
+    "asset_type": "EQUITY",
+    "underlying_type": "EQUITY",
+    "trading_symbol": "LTF 180 CE 26 JUN 25",
+    "strike_price": 180,
+    "qty_multiplier": 1
+  },
+  {
+    "weekly": false,
+    "segment": "NSE_FO",
+    "name": "L&T FINANCE LIMITED",
+    "exchange": "NSE",
+    "expiry": 1750962599000,
+    "instrument_type": "PE",
+    "asset_symbol": "LTF",
+    "underlying_symbol": "LTF",
+    "instrument_key": "NSE_FO|115500",
+    "lot_size": 4462,
+    "freeze_quantity": 133860,
+    "exchange_token": "115500",
+    "minimum_lot": 4462,
+    "asset_key": "NSE_EQ|INE498L01015",
+    "underlying_key": "NSE_EQ|INE498L01015",
+    "tick_size": 5,
+    "asset_type": "EQUITY",
+    "underlying_type": "EQUITY",
+    "trading_symbol": "LTF 170 PE 26 JUN 25",
+    "strike_price": 170,
+    "qty_multiplier": 1
+  },
+  {
+    "weekly": false,
+    "segment": "NSE_FO",
+    "name": "L&T FINANCE LIMITED",
+    "exchange": "NSE",
+    "expiry": 1750962599000,
+    "instrument_type": "CE",
+    "asset_symbol": "LTF",
+    "underlying_symbol": "LTF",
+    "instrument_key": "NSE_FO|11550",
+    "lot_size": 4462,
+    "freeze_quantity": 133860,
+    "exchange_token": "115501",
+    "minimum_lot": 4462,
+    "asset_key": "NSE_EQ|INE498L01015",
+    "underlying_key": "NSE_EQ|INE498L01015",
+    "tick_size": 5,
+    "asset_type": "EQUITY",
+    "underlying_type": "EQUITY",
+    "trading_symbol": "LTF 175 CE 26 JUN 25",
+    "strike_price": 175,
+    "qty_multiplier": 1
+  },
+  {
+	"segment": "NSE_INDEX",
+	"name": "NIFTY",
+	"exchange": "NSE",
+	"instrument_type": "INDEX",
+	"instrument_key": "NSE_INDEX|NIFTY",
+	"exchange_token": "13",
+	"trading_symbol": "NIFTY"
+  }
+]
+		 </textarea
+		>
+		<button id="upstox_NSE_Cta">Print NSE, NFO &amp; CDS formated</button>
+		<script>
+			((d) => {
+				/** Converts date-string to a standardized format (yyyy-mm-dd) used in cross-broker std primary-key
+				 * @param {Date} date
+				 * @returns {string}
+				 */
+				function _convertTo_stdPk_dateFormat(date) {
+					const year = date.getFullYear();
+					const month = String(date.getMonth() + 1).padStart(2, '0');
+					const day = String(date.getDate()).padStart(2, '0');
+					return `${year}-${month}-${day}`;
+				}
+				///
+				/** Strips segment part from token.
+				 * For eg. returns '123456' part from 'NSE_EQ|123456'
+				 * We re-build the entire token by prepending the segment in our frontend code
+				 */
+				function stripSegFromInstrumentToken(token) {
+					// return token.split('|')[1];
+					return token.substring(token.indexOf('|') + 1); //more efficient
+				}
+				///
+				///
+				const aoCta = d.getElementById('upstox_NSE_Cta');
+				aoCta.onclick = function () {
+					const txtData = d.getElementById('txtDataInp_upstox_NSE').value.replace(/\s*\/\/.*\n/gim, ''); //we first strip the comments we had added for documenting the lines
+					const instrumentsDataAry = JSON.parse(txtData);
+					// console.log(instrumentsDataAry);
+					const consoleTablePrintAry_NSE = [],
+						// consoleTablePrintAry_BSE = [],
+						consoleTablePrintAry_NFO = [],
+						consoleTablePrintAry_CDS = [];
+					// consoleTablePrintAry_MCX = [];
+
+					instrumentsDataAry.forEach((instrument) => {
+						//for NSE instruments, only save the 'EQ' ie equity type instruments and ignore other like BL
+						// if (exch_seg === 'NSE' && symbol.endsWith('-EQ')) nseTable.put(`${token},${name},,,${lotsize},NSE`, name);
+						if (instrument.segment === 'NSE_EQ') {
+							consoleTablePrintAry_NSE.push({
+								key: instrument.trading_symbol,
+								value: `${stripSegFromInstrumentToken(instrument.instrument_key)},${instrument.name},${instrument.lot_size}`,
+							});
+						} else if (instrument.segment === 'NSE_INDEX') {
+							consoleTablePrintAry_NSE.push({
+								key: instrument.trading_symbol,
+								value: `${stripSegFromInstrumentToken(instrument.instrument_key)},,`,
+							});
+						} else if (instrument.segment === 'NSE_FO') {
+							if (instrument.instrument_type === 'CE') {
+								consoleTablePrintAry_NFO.push({
+									key: `${instrument.underlying_symbol}|C|${_convertTo_stdPk_dateFormat(new Date(instrument.expiry))}|${instrument.strike_price}`,
+									value: `${stripSegFromInstrumentToken(instrument.instrument_key)},${instrument.underlying_type === 'EQUITY' ? instrument.name : ''},${instrument.lot_size}`,
+								});
+							} else if (instrument.instrument_type === 'PE') {
+								consoleTablePrintAry_NFO.push({
+									key: `${instrument.underlying_symbol}|P|${_convertTo_stdPk_dateFormat(new Date(instrument.expiry))}|${instrument.strike_price}`,
+									value: `${stripSegFromInstrumentToken(instrument.instrument_key)},${instrument.underlying_type === 'EQUITY' ? instrument.name : ''},${instrument.lot_size}`,
+								});
+							} else if (instrument.instrument_type === 'FUT') {
+								consoleTablePrintAry_NFO.push({
+									key: `${instrument.underlying_symbol}|F|${_convertTo_stdPk_dateFormat(new Date(instrument.expiry))}|`,
+									value: `${stripSegFromInstrumentToken(instrument.instrument_key)},${instrument.underlying_type === 'EQUITY' ? instrument.name : ''},${instrument.lot_size}`,
+								});
+							}
+						} else if (instrument.segment === 'NCD_FO') {
+							if (instrument.instrument_type === 'CE') {
+								consoleTablePrintAry_CDS.push({
+									key: `${instrument.underlying_symbol}|C|${_convertTo_stdPk_dateFormat(new Date(instrument.expiry))}|${instrument.strike_price}`,
+									value: `${stripSegFromInstrumentToken(instrument.instrument_key)},${instrument.lot_size}`,
+								});
+							} else if (instrument.instrument_type === 'PE') {
+								consoleTablePrintAry_CDS.push({
+									key: `${instrument.underlying_symbol}|P|${_convertTo_stdPk_dateFormat(new Date(instrument.expiry))}|${instrument.strike_price}`,
+									value: `${stripSegFromInstrumentToken(instrument.instrument_key)},${instrument.lot_size}`,
+								});
+							} else if (instrument.instrument_type === 'FUT') {
+								consoleTablePrintAry_CDS.push({
+									key: `${instrument.underlying_symbol}|F|${_convertTo_stdPk_dateFormat(new Date(instrument.expiry))}|`,
+									value: `${stripSegFromInstrumentToken(instrument.instrument_key)},${instrument.lot_size}`,
+								});
+							}
+						}
+					});
+					console.log('===== NSE =====');
+					console.table(consoleTablePrintAry_NSE);
+					// console.log('===== BSE =====');
+					// console.table(consoleTablePrintAry_BSE);
+					console.log('===== NFO =====');
+					console.table(consoleTablePrintAry_NFO);
+					console.log('===== CDS =====');
+					console.table(consoleTablePrintAry_CDS);
+					// console.log('===== MCX =====');
+					// console.table(consoleTablePrintAry_MCX);
+				};
+			})(document);
+		</script>
+		<hr />
+		<hr />
+		<h4>BSE sample JSON data</h4>
+		<a href="https://assets.upstox.com/market-quote/instruments/exchange/BSE.json.gz">BSE master data</a>
+		<p>Note that we only load equity from BSE and ignore BSE_FO, BCD_FO and BSE_INDEX</p>
+		<textarea class="sampleDataInp" id="txtDataInp_upstox_BSE" name="txtDataInp_upstox_BSE">
+[
+  {
+    "segment": "BSE_EQ",
+    "name": "KAKATIYA TEXTILES LTD.",
+    "exchange": "BSE",
+    "isin": "INE092E01011",
+    "instrument_type": "X",
+    "instrument_key": "BSE_EQ|INE092E01011",
+    "lot_size": 1,
+    "freeze_quantity": 100000,
+    "exchange_token": "521054",
+    "tick_size": 1,
+    "trading_symbol": "KAKTEX",
+    "qty_multiplier": 1
+  },
+  {
+    "segment": "BSE_EQ",
+    "name": "RAJKAMAL SYNTHETICS LTD.",
+    "exchange": "BSE",
+    "isin": "INE376L01013",
+    "instrument_type": "X",
+    "instrument_key": "BSE_EQ|INE376L01013",
+    "lot_size": 1,
+    "freeze_quantity": 100000,
+    "exchange_token": "514028",
+    "tick_size": 1,
+    "trading_symbol": "RAJKSYN",
+    "qty_multiplier": 1
+  },
+  {
+    "segment": "BSE_EQ",
+    "name": "NILKAMAL LTD.",
+    "exchange": "BSE",
+    "isin": "INE310A01015",
+    "instrument_type": "B",
+    "instrument_key": "BSE_EQ|INE310A01015",
+    "lot_size": 1,
+    "freeze_quantity": 100000,
+    "exchange_token": "523385",
+    "tick_size": 5,
+    "trading_symbol": "NILKAMAL",
+    "short_name": "NILKAMAL",
+    "qty_multiplier": 1
+  },
+  {
+    "weekly": false,
+    "segment": "BSE_FO",
+    "name": "SENSEX",
+    "exchange": "BSE",
+    "expiry": 1753813799000,
+    "instrument_type": "PE",
+    "asset_symbol": "SENSEX",
+    "underlying_symbol": "SENSEX",
+    "instrument_key": "BSE_FO|821343",
+    "lot_size": 20,
+    "freeze_quantity": 1000,
+    "exchange_token": "821343",
+    "minimum_lot": 20,
+    "asset_key": "BSE_INDEX|SENSEX",
+    "underlying_key": "BSE_INDEX|SENSEX",
+    "tick_size": 5,
+    "asset_type": "INDEX",
+    "underlying_type": "INDEX",
+    "trading_symbol": "SENSEX 89100 PE 29 JUL 25",
+    "strike_price": 89100
+  }
+]
+		</textarea
+		>
+		<hr />
+		<hr />
+		<h4>MCX sample JSON data</h4>
+		<a href="https://assets.upstox.com/market-quote/instruments/exchange/MCX.json.gz">MCX master data</a>
+		<textarea class="sampleDataInp" id="txtDataInp_upstox_MCX" name="txtDataInp_upstox_MCX">
+[
+  {
+    "segment": "MCX_FO",
+    "name": "ZINC",
+    "exchange": "MCX",
+    "expiry": 1755887399000,
+    "instrument_type": "PE",
+    "asset_symbol": "ZINC",
+    "underlying_symbol": "ZINC",
+    "instrument_key": "MCX_FO|457048",
+    "lot_size": 5,
+    "freeze_quantity": 20,
+    "exchange_token": "457048",
+    "asset_key": "MCX_FO|452852",
+    "underlying_key": "MCX_FO|452852",
+    "tick_size": 1,
+    "asset_type": "COM",
+    "underlying_type": "COM",
+    "trading_symbol": "ZINC 255 PE 22 AUG 25",
+    "strike_price": 255,
+    "last_trading_date": 1755887399000,
+    "price_quote_unit": "KGS",
+    "qty_multiplier": 5000
+  },
+  {
+    "segment": "MCX_FO",
+    "name": "ZINC",
+    "exchange": "MCX",
+    "expiry": 1755887399000,
+    "instrument_type": "PE",
+    "asset_symbol": "ZINC",
+    "underlying_symbol": "ZINC",
+    "instrument_key": "MCX_FO|457049",
+    "lot_size": 5,
+    "freeze_quantity": 20,
+    "exchange_token": "457049",
+    "asset_key": "MCX_FO|452852",
+    "underlying_key": "MCX_FO|452852",
+    "tick_size": 1,
+    "asset_type": "COM",
+    "underlying_type": "COM",
+    "trading_symbol": "ZINC 257.5 PE 22 AUG 25",
+    "strike_price": 257.5,
+    "last_trading_date": 1755887399000,
+    "price_quote_unit": "KGS",
+    "qty_multiplier": 5000
+  }
+]
+		</textarea
+		>
+	</body>
+</html>

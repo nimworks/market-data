@@ -1,0 +1,18 @@
+{
+	"editor.insertSpaces": false,
+	"files.eol": "\n",
+	"eslint.format.enable": false,
+	"eslint.useFlatConfig": true,
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "never",
+		"source.fixAll": "never"
+	},
+	"editor.formatOnType": true,
+	"editor.formatOnPaste": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.formatOnSave": true,
+	"prettier.printWidth": 160
+}

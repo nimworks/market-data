@@ -8,36 +8,63 @@ const { Readable } = require('stream');
 // // const outputCsvPath_BSE = path.resolve(__dirname, '../public/upstox/BSE.csv');
 // const outputGzPath_BSE = path.resolve(__dirname, '../public/upstox/BSE.csv.gz');
 
-fetchAndProcessFile('https://assets.upstox.com/market-quote/instruments/exchange/NSE.json.gz', path.resolve(__dirname, '../public/upstox/NSE.csv.gz'));
-fetchAndProcessFile('https://assets.upstox.com/market-quote/instruments/exchange/BSE.json.gz', path.resolve(__dirname, '../public/upstox/BSE.csv.gz'));
-fetchAndProcessFile('https://assets.upstox.com/market-quote/instruments/exchange/MCX.json.gz', path.resolve(__dirname, '../public/upstox/MCX.csv.gz'));
+// fetchAndProcessFile('https://assets.upstox.com/market-quote/instruments/exchange/NSE.json.gz', path.resolve(__dirname, '../../public/upstox/NSE.csv.gz'));
+// fetchAndProcessFile('https://assets.upstox.com/market-quote/instruments/exchange/BSE.json.gz', path.resolve(__dirname, '../../public/upstox/BSE.csv.gz'));
+// fetchAndProcessFile('https://assets.upstox.com/market-quote/instruments/exchange/MCX.json.gz', path.resolve(__dirname, '../../public/upstox/MCX.csv.gz'));
 
-function fetchAndProcessFile(url, outputPath) {
+fetchAndProcessFile('/market-quote/instruments/exchange/NSE.json.gz', path.resolve(__dirname, '../../public/upstox/NSE.csv.gz'));
+fetchAndProcessFile('/market-quote/instruments/exchange/BSE.json.gz', path.resolve(__dirname, '../../public/upstox/BSE.csv.gz'));
+fetchAndProcessFile('/market-quote/instruments/exchange/MCX.json.gz', path.resolve(__dirname, '../../public/upstox/MCX.csv.gz'));
+
+// function fetchAndProcessFile(url, outputPath) {
+function fetchAndProcessFile(urlPath, outputPath) {
 	try {
+		// https.get(url, (response) => {
 		https
-			.get(url, (response) => {
-				const gunzip = zlib.createGunzip();
-				let jsonData = '';
+			.get(
+				{
+					hostname: 'assets.upstox.com',
+					path: urlPath, //'/market-quote/instruments/exchange/NSE.json.gz',
+					headers: {
+						'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+						//desktop chrome --> Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+						//desktop firefox --> Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:114.0) Gecko/20100101 Firefox/114.0
 
-				response
-					.pipe(gunzip)
-					.on('data', (chunk) => {
-						jsonData += chunk.toString();
-					})
-					.on('end', () => {
-						console.log('JSON file extracted successfully.');
-						// writeCsv(jsonData, outputCsvPath_BSE);
-						writeGz(jsonToCsv(jsonData), outputPath);
-					})
-					.on('error', (err) => {
-						console.error('Error during decompression:', err);
-					});
-			})
+						// Accept: '*/*',
+						'Accept-Encoding': 'gzip',
+					},
+				},
+				(response) => {
+					// console.log('RESPONSE-HEADERS:', response.headers);
+					if (response.headers['content-type'] !== 'application/gzip') {
+						// console.log('File being read from ' + url + ' is not a GZIP file');
+						throw new Error('File being read from ' + urlPath + ' is not a GZIP file');
+					}
+
+					const gunzip = zlib.createGunzip();
+					let jsonData = '';
+
+					response
+						.pipe(gunzip)
+						.on('data', (chunk) => {
+							jsonData += chunk.toString();
+						})
+						.on('end', () => {
+							console.log('JSON file extracted successfully.');
+							// writeCsv(jsonData, outputCsvPath_BSE);
+							writeGz(jsonToCsv(jsonData), outputPath);
+						})
+						.on('error', (err) => {
+							console.error('Error during decompression:', err);
+						});
+				},
+			)
 			.on('error', (err) => {
 				console.error('Error fetching the file:', err);
 			});
 	} catch (err) {
-		console.error('ERROR fetching and processing of ' + url + ' :', err);
+		// console.error('ERROR fetching and processing of ' + url + ' :', err);
+		console.error('ERROR fetching and processing of https://assets.upstox.com' + urlPath + ' :', err);
 	}
 }
 

@@ -1,5 +1,8 @@
-/*global module*/
-module.exports = {
+/**
+ * @see https://prettier.io/docs/en/configuration.html
+ * @type {import("prettier").Config}
+ */
+const prtConfig = {
 	arrowParens: 'always',
 	bracketSameLine: false,
 	bracketSpacing: true,
@@ -18,4 +21,7 @@ module.exports = {
 	tabWidth: 4,
 	useTabs: true,
 	embeddedLanguageFormatting: 'auto',
+	endOfLine: 'lf',
 };
+
+module.exports = prtConfig;

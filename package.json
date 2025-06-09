@@ -1,0 +1,25 @@
+{
+	"name": "stock-market-data",
+	"version": "1.0.0",
+	"description": "Stock market data",
+	"private": true,
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"serve-ori-sample-data": "npx http-server ./src/sampleData -c-1",
+		"serve-processed-market-data": "npx http-server ./public -c-1",
+		"lint": "npx eslint src/**/**/**/*.{js,jsx,ts,tsx}",
+		"lint-fix": "npx eslint src/**/**/**/*.{js,jsx,ts,tsx} --fix",
+		"format": "npx prettier --write src/"
+	},
+	"keywords": [],
+	"author": "Nimish Rajwade",
+	"license": "ISC",
+	"devDependencies": {
+		"@eslint/js": "^9.28.0",
+		"eslint": "^9.28.0",
+		"eslint-config-prettier": "^10.1.5",
+		"eslint-plugin-prettier": "^5.4.1",
+		"http-server": "^14.1.1",
+		"prettier": "^3.5.3"
+	}
+}
