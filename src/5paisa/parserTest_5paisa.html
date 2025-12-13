@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>5paisa data parser</title>
+		<style>
+			body {
+				background: #333;
+				color: #999;
+			}
+			.sampleDataInp {
+				min-width: 100%;
+				min-height: 50vh;
+				background: #333;
+				color: #999;
+				white-space: nowrap;
+				overflow: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <p>We generate a unique cross-broker key for NFO instruments</p> -->
+		<h1>5paisa</h1>
+		<h2>NSE</h2>
+		<a href="https://openapi.5paisa.com/VendorsAPI/Service1.svc/ScripMaster/segment/nse_eq">NSE master data</a>
+		<textarea class="sampleDataInp" id="txtDataInp_5paisa_NSE" name="txtDataInp_5paisa_NSE">
+Exch,ExchType,ScripCode,Name,Expiry,ScripType,StrikeRate,FullName,TickSize,LotSize,QtyLimit,Multiplier,SymbolRoot,BOCOAllowed,ISIN,ScripData,Series
+N,C,1,GOLDSTAR,,XX,0,GOLDSTAR POWER LIMITED,0.05,11250,9358690,1,GOLDSTAR,N,INE405Y01021,GOLDSTAR_SM,SM
+N,C,4,21STCENMGM,,XX,0,21ST CENTURY MGMT SERVICE,0.01,1,343349,1,21STCENMGM,N,INE253B01015,21STCENMGM_EQ,EQ
+N,C,7,AARTIIND,,XX,0,AARTI INDUSTRIES LTD,0.05,1,282460,1,AARTIIND,Y,INE769A01020,AARTIIND_EQ,EQ
+N,C,13,ABB,,XX,0,ABB INDIA LIMITED,0.5,1,19283,1,ABB,Y,INE117A01022,ABB_EQ,EQ
+N,C,14,656KA30,,XX,0,SDL KA 6.56% 2030,0.01,100,999999,1,656KA30,N,IN1920200210,656KA30_SG,SG
+N,C,17,GATECHDVR,,XX,0,GACM TECHNOLOGIES LIMITED,0.01,1,6202074,1,GATECHDVR,N,INE224E01036,GATECHDVR_EQ,EQ
+N,C,18,66RJ30,,XX,0,SDL RJ 6.6% 2030,0.01,100,999974,1,66RJ30,N,IN2920200366,66RJ30_SG,SG
+N,C,19,STYRENIX,,XX,0,STYRENIX PERFORMANCE LTD,0.1,1,48237,1,STYRENIX,Y,INE189B01011,STYRENIX_EQ,EQ
+N,C,20,66GA30A,,XX,0,SDL GA 6.6% 2030,0.01,100,326999,1,66GA30A,N,IN1420200124,66GA30A_SG,SG
+N,C,21,664UP30,,XX,0,SDL UP 6.64% 2030,0.01,100,999999,1,664UP30,N,IN3320200089,664UP30_SG,SG
+N,C,22,ACC,,XX,0,ACC LIMITED,0.1,1,55960,1,ACC,Y,INE012A01025,ACC_EQ,EQ
+N,C,23,67JK30,,XX,0,SDL JK 6.7% 2030,0.01,100,999999,1,67JK30,N,IN4920200073,67JK30_SG,SG
+N,C,25,ADANIENT,,XX,0,ADANI ENTERPRISES LIMITED,0.1,1,45013,1,ADANIENT,Y,INE423A01024,ADANIENT_EQ,EQ
+N,C,26,67HR30,,XX,0,SDL HR 6.7% 2030,0.01,100,999899,1,67HR30,N,IN1620200098,67HR30_SG,SG
+N,C,29,667MH31,,XX,0,SDL MH 6.67% 2031,0.01,100,999999,1,667MH31,N,IN2220200157,667MH31_SG,SG
+N,C,32,679MP33,,XX,0,SDL MP 6.79% 2033,0.01,100,999999,1,679MP33,N,IN2120200158,679MP33_SG,SG
+N,C,34,ADOR,,XX,0,ADOR WELDING LTD,0.1,1,93383,1,ADOR,N,INE045A01017,ADOR_EQ,EQ
+N,C,35,677KA34,,XX,0,SDL KA 6.77% 2034,0.01,100,999999,1,677KA34,N,IN1920200228,677KA34_SG,SG
+N,C,38,685AP36,,XX,0,SDL AP 6.85% 2036,0.01,100,999999,1,685AP36,N,IN1020200359,685AP36_SG,SG
+N,C,759862,75TS52,,XX,0,SDL TS 7.5% 2052,0.01,100,999999,1,75TS52,N,IN4520250510,75TS52_SG,SG
+N,C,759863,675RJ30A,,XX,0,SDL RJ 6.75% 2030,0.01,100,999999,1,675RJ30A,N,IN2920250270,675RJ30A_SG,SG
+N,C,759864,91D190226,,XX,0,GOI TBILL 91D-19/02/26,0.01,100,1011928,1,91D190226,N,IN002025X349,91D190226_TB,TB
+N,C,759865,182D210526,,XX,0,GOI TBILL 182D-21/05/26,0.01,100,1026899,1,182D210526,N,IN002025Y347,182D210526_TB,TB
+N,C,759866,364D191126,,XX,0,GOI TBILL 364D-19/11/26,0.01,100,1055359,1,364D191126,N,IN002025Z344,364D191126_TB,TB
+N,C,759867,CAPILLARY,,XX,0,CAPILLARY TECHNO INDIA L,0.05,1,142364,1,CAPILLARY,N,INE0ILV01024,CAPILLARY_EQ,EQ
+N,C,759872,726JCL30,,XX,0,JCL 7.26% 2030 SR IV,0.01,1,999,1,726JCL30,N,INE282H07042,726JCL30_N0,N0
+N,C,759874,72841ABH30,,XX,0,ABHFL 7.2841% 2030 SR H1,0.01,1,653,1,72841ABH30,N,INE831R07623,72841ABH30_N0,N0
+N,C,759876,UTLSOLAR,,XX,0,FUJIYAMA POWER SYSTEMS L,0.01,1,486580,1,UTLSOLAR,N,INE12UR01024,UTLSOLAR_EQ,EQ
+N,C,759878,771SIHF35,,XX,0,SIHF 7.71% 2035 SR 33,0.01,1,999,1,771SIHF35,N,INE213W07350,771SIHF35_N0,N0
+N,C,759880,TENNIND,,XX,0,TENNECO CLEAN AIR INDIA L,0.05,1,210681,1,TENNIND,N,INE19RI01016,TENNIND_EQ,EQ
+N,C,759885,CHEMICAL,,XX,0,KOTAKMAMC - CHEMICAL,0.01,1,153814,1,CHEMICAL,N,INF174KA1XV0,CHEMICAL_EQ,EQ
+N,C,759891,MOIPO,,XX,0,MOTILALAMC - MOIPO,0.01,1,34334,1,MOIPO,N,INF247L01GI5,MOIPO_EQ,EQ
+N,C,759895,910HFL36,,XX,0,HFL 9.10% 2036 SR 74,0.01,1,817,1,910HFL36,N,INE957N08201,910HFL36_N0,N0
+N,C,999920005,BANKNIFTY,,EQ,0,BANKNIFTY,0,2000,0,1,BANKNIFTY,N,BANKNIFTY           ,BANKNIFTY_EQ,EQ
+N,C,999920006,NIFTY 100,,EQ,0,NIFTY 100,0,2000,0,1,NIFTY 100,N,,NIFTY 100_EQ,EQ
+N,C,999920008,NIFTY IT,,EQ,0,NIFTY IT,0,2000,0,1,NIFTY IT,N,,NIFTY IT_EQ,EQ
+N,C,999920009,NIFTY REALTY,,EQ,0,NIFTY REALTY,0,2000,0,1,NIFTY REALTY,N,,NIFTY REALTY_EQ,EQ
+N,C,999920010,NIFTY MIDCAP 50,,EQ,0,NIFTY MIDCAP 50,0,2000,0,1,NIFTY MIDCAP 50,N,,NIFTY MIDCAP 50_EQ,EQ
+N,C,999920011,NIFTY INFRA,,EQ,0,NIFTY INFRA,0,2000,0,1,NIFTY INFRA,N,,NIFTY INFRA_EQ,EQ
+N,C,999920012,NIFTY ENERGY,,EQ,0,NIFTY ENERGY,0,2000,0,1,NIFTY ENERGY,N,,NIFTY ENERGY_EQ,EQ
+N,C,999920013,NIFTY FMCG,,EQ,0,NIFTY FMCG,0,2000,0,1,NIFTY FMCG,N,,NIFTY FMCG_EQ,EQ
+N,C,999920014,NIFTY MNC,,EQ,0,NIFTY MNC,0,2000,0,1,NIFTY MNC,N,,NIFTY MNC_EQ,EQ
+N,C,999920015,NIFTY PHARMA,,EQ,0,NIFTY PHARMA,0,2000,0,1,NIFTY PHARMA,N,,NIFTY PHARMA_EQ,EQ
+N,C,999920016,NIFTY PSE,,EQ,0,NIFTY PSE,0,2000,0,1,NIFTY PSE,N,,NIFTY PSE_EQ,EQ
+N,C,999920017,NIFTY PSU BANK,,EQ,0,NIFTY PSU BANK,0,2000,0,1,NIFTY PSU BANK,N,,NIFTY PSU BANK_EQ,EQ</textarea
+		>
+		<button id="5paisa_NSE_Cta">Print NSE formated</button>
+		<script>
+			((d) => {
+				const nseCtaBtn = d.getElementById('5paisa_NSE_Cta');
+				nseCtaBtn.onclick = function () {
+					const txtData = d.getElementById('txtDataInp_5paisa_NSE').value; //.replace(/\s*\/\/.*\n/gim, ''); //we first strip the comments we had added for documenting the lines
+					const lines = txtData.split('\n');
+					const headerLine = lines.shift(); //remove header line from array
+					const consoleTablePrintAry_NSE = [];
+
+					//Exch,ExchType,ScripCode,Name,Expiry,ScripType,StrikeRate,FullName,TickSize,LotSize,QtyLimit,Multiplier,SymbolRoot,BOCOAllowed,ISIN,ScripData,Series
+
+					lines.forEach((line) => {
+						const columns = line.split(',');
+						if ((columns[16] == 'EQ' || columns[16] == 'SM') && columns.length > 2) {
+							if (columns[8] != '0') {
+								//if ticksize is not  0, we have tradeable instruments
+								consoleTablePrintAry_NSE.push({
+									key: columns[3], //symbol
+									value: `${columns[2]},${columns[7]},${columns[9]}`, //token,full-name,lotsize
+								});
+							} else {
+								consoleTablePrintAry_NSE.push({
+									key: columns[3],
+									value: `${columns[2]},,`,
+								});
+							}
+						}
+					});
+					// console.log('===== NSE =====');
+					// console.log('\x1b[43m\x1b[30m===== NSE =====\x1b[0m');
+					console.log('%cNSE', 'font-weight:bold;color:black;background:yellow;padding:6px 60px;font-size:16px;margin-top:60px');
+					console.table(consoleTablePrintAry_NSE);
+				};
+			})(document);
+		</script>
+		<hr />
+		<hr />
+		<h2>BSE</h2>
+		<a href="https://openapi.5paisa.com/VendorsAPI/Service1.svc/ScripMaster/segment/bse_eq">BSE master data</a>
+		<textarea class="sampleDataInp" id="txtDataInp_5paisa_BSE" name="txtDataInp_5paisa_BSE">
+Exch,ExchType,ScripCode,Name,Expiry,ScripType,StrikeRate,FullName,TickSize,LotSize,QtyLimit,Multiplier,SymbolRoot,BOCOAllowed,ISIN,ScripData,Series
+B,C,199129,HDFQUALINAV,,XX,0,INAVHDFCQUALETF,0.01,1,0,1,HDFQUALINAV,N,INF179KC1DL6,HDFQUALINAV_EQ,EQ
+B,C,199133,HDFCLOLINAV,,XX,0,INAVHDFCLOWVOL,0.01,1,0,1,HDFCLOLINAV,N,INF179KC1DN2,HDFCLOLINAV_EQ,EQ
+B,C,199134,HDFCBANINAV,,XX,0,INAVHDFCPVTBAN,0.01,1,0,1,HDFCBANINAV,N,INF179KC1DW3,HDFCBANINAV_EQ,EQ
+B,C,199135,HDFCNITINAV,,XX,0,INAVHDFCNIFIT,0.01,1,0,1,HDFCNITINAV,N,INF179KC1DX1,HDFCNITINAV_EQ,EQ
+B,C,200072,MCL,,XX,0,MADHAV COPPER LIMITED,0.01,1,0,1,MCL,N,INE813V01022,MCL_EQ,EQ
+B,C,200105,RKEC,,XX,0,RKEC PROJECTS LIMITED,0.01,1,0,1,RKEC,N,INE786W01010,RKEC_EQ,EQ
+B,C,200184,AMJUMBO,,XX,0,A AND M JUMBO BAGS LTD,0.05,8000,0,1,AMJUMBO,N,INE749Y01014,AMJUMBO_EQ,EQ
+B,C,200223,SMVD,,XX,0,SMVD POLY PACK LIMITED,0.05,4040,0,1,SMVD,N,INE702Y01013,SMVD_EQ,EQ
+B,C,540080,DHATRE,,XX,0,DHATRE UDYOG LIMITED,0.01,1,0,1,DHATRE,N,INE715T01031,DHATRE_X ,X 
+B,C,540081,SABEVENTS,,XX,0,SAB EVENTS & GOVERNANCE NOW ME,0.01,1,0,1,SABEVENTS,N,INE860T01019,SABEVENTS_BE,BE
+B,C,540082,RSTL,,XX,0,RIDDHI STEEL AND TUBE LIMITED,0.05,1500,0,1,RSTL,N,INE367U01013,RSTL_MT,MT
+B,C,540083,TVVISION,,XX,0,TV VISION LIMITED,0.01,1,0,1,TVVISION,N,INE871L01013,TVVISION_EQ,EQ
+B,C,540097,GAMCO,,XX,0,GAMCO LIMITED,0.01,1,0,1,GAMCO,N,INE890S01026,GAMCO_X ,X</textarea
+		>
+		<button id="5paisa_BSE_Cta">Print BSE formated</button>
+		<script>
+			((d) => {
+				const bseCtaBtn = d.getElementById('5paisa_BSE_Cta');
+				bseCtaBtn.onclick = function () {
+					const txtData = d.getElementById('txtDataInp_5paisa_BSE').value; //.replace(/\s*\/\/.*\n/gim, ''); //we first strip the comments we had added for documenting the lines
+					const lines = txtData.split('\n');
+					const headerLine = lines.shift(); //remove header line from array
+					const consoleTablePrintAry_BSE = [];
+
+					//Exch,ExchType,ScripCode,Name,Expiry,ScripType,StrikeRate,FullName,TickSize,LotSize,QtyLimit,Multiplier,SymbolRoot,BOCOAllowed,ISIN,ScripData,Series
+
+					lines.forEach((line) => {
+						const columns = line.split(',');
+						if (columns.length > 2) {
+							// if (columns[16] == 'EQ' || columns[16] == 'SM') {
+							if (columns[8] != '0') {
+								//if ticksize is not  0, we have tradeable instruments
+								consoleTablePrintAry_BSE.push({
+									key: columns[3], //symbol
+									value: `${columns[2]},${columns[7]},${columns[9]}`, //token,full-name,lotsize
+								});
+							} else {
+								consoleTablePrintAry_BSE.push({
+									key: columns[3],
+									value: `${columns[2]},,`,
+								});
+							}
+							// }
+						}
+					});
+					// console.log('===== BSE =====');
+					// console.log('\x1b[43m\x1b[30m===== BSE =====\x1b[0m');
+					console.log('%cBSE', 'font-weight:bold;color:black;background:yellow;padding:6px 60px;font-size:16px;margin-top:60px');
+					console.table(consoleTablePrintAry_BSE);
+				};
+			})(document);
+		</script>
+		<!-- <script>
+			((d) => {
+				const nseCtaBtn = d.getElementById('5paisa_NSE_Cta'),
+					bseCtaBtn = d.getElementById('5paisa_BSE_Cta');
+				nseCtaBtn.onclick = function () {
+					parseEquityData(d.getElementById('txtDataInp_5paisa_NSE').value, 'NSE');
+				};
+				bseCtaBtn.onclick = function () {
+					parseEquityData(d.getElementById('txtDataInp_5paisa_BSE').value, 'BSE');
+				};
+
+				function parseEquityData(txtData, conosleTitle) {
+					// const txtData = d.getElementById('txtDataInp_5paisa_NSE').value;
+					const lines = txtData.split('\n');
+					const headerLine = lines.shift(); //remove header line from array
+					const consoleTablePrintAry_EQ = [];
+
+					//Exch,ExchType,ScripCode,Name,Expiry,ScripType,StrikeRate,FullName,TickSize,LotSize,QtyLimit,Multiplier,SymbolRoot,BOCOAllowed,ISIN,ScripData,Series
+
+					lines.forEach((line) => {
+						const columns = line.split(',');
+						if (columns.length > 2 && ['EQ', 'SM', 'X', 'MT'].includes(columns[16])) {
+							if (columns[8] != '0') {
+								//if ticksize is not  0, we have tradeable instruments
+								consoleTablePrintAry_EQ.push({
+									key: columns[3], //symbol
+									value: `${columns[2]},${columns[7]},${columns[9]}`, //token,full-name,lotsize
+								});
+							} else {
+								consoleTablePrintAry_EQ.push({
+									key: columns[3],
+									value: `${columns[2]},,`,
+								});
+							}
+						}
+					});
+					console.log(`===== ${conosleTitle} =====`);
+					console.table(consoleTablePrintAry_EQ);
+				}
+			})(document);
+		</script> -->
+		<hr />
+		<hr />
+		<h2>NFO</h2>
+		<a href="https://openapi.5paisa.com/VendorsAPI/Service1.svc/ScripMaster/segment/nse_fo">NFO master data</a>
+		<textarea class="sampleDataInp" id="txtDataInp_5paisa_NFO" name="txtDataInp_5paisa_NFO">
+Exch,ExchType,ScripCode,Name,Expiry,ScripType,StrikeRate,FullName,TickSize,LotSize,QtyLimit,Multiplier,SymbolRoot,BOCOAllowed,ISIN,ScripData,Series
+N,D,35000,BANKNIFTY 30 DEC 2025 CE 69700.00,2025-12-30,CE,69700,BANKNIFTY 30 DEC 2025 CE 69700.00,0.05,35,595,1,BANKNIFTY,N,BANKNIFTY,BANKNIFTY 30 DEC 2025 CE 69700.00_20251230_CE_69700,XX
+N,D,35001,BANKNIFTY 30 DEC 2025 PE 69700.00,2025-12-30,PE,69700,BANKNIFTY 30 DEC 2025 PE 69700.00,0.05,35,595,1,BANKNIFTY,N,BANKNIFTY,BANKNIFTY 30 DEC 2025 PE 69700.00_20251230_PE_69700,XX
+N,D,35011,BANKNIFTY 27 JAN 2026 CE 74400.00,2026-01-27,CE,74400,BANKNIFTY 27 JAN 2026 CE 74400.00,0.05,30,600,1,BANKNIFTY,N,BANKNIFTY,BANKNIFTY 27 JAN 2026 CE 74400.00_20260127_CE_74400,XX
+N,D,35012,BANKNIFTY 27 JAN 2026 PE 74400.00,2026-01-27,PE,74400,BANKNIFTY 27 JAN 2026 PE 74400.00,0.05,30,600,1,BANKNIFTY,N,BANKNIFTY,BANKNIFTY 27 JAN 2026 PE 74400.00_20260127_PE_74400,XX
+N,D,35013,BANKNIFTY 24 FEB 2026 CE 73900.00,2026-02-24,CE,73900,BANKNIFTY 24 FEB 2026 CE 73900.00,0.05,30,600,1,BANKNIFTY,N,BANKNIFTY,BANKNIFTY 24 FEB 2026 CE 73900.00_20260224_CE_73900,XX
+N,D,35014,BANKNIFTY 24 FEB 2026 PE 73900.00,2026-02-24,PE,73900,BANKNIFTY 24 FEB 2026 PE 73900.00,0.05,30,600,1,BANKNIFTY,N,BANKNIFTY,BANKNIFTY 24 FEB 2026 PE 73900.00_20260224_PE_73900,XX
+N,D,36352,KFINTECH 27 JAN 2026 CE 760.00,2026-01-27,CE,760,KFINTECH 27 JAN 2026 CE 760.00,0.05,500,20000,1,KFINTECH,N,INE138Y01010,KFINTECH 27 JAN 2026 CE 760.00_20260127_CE_760,XX
+N,D,36353,KFINTECH 27 JAN 2026 PE 760.00,2026-01-27,PE,760,KFINTECH 27 JAN 2026 PE 760.00,0.05,500,20000,1,KFINTECH,N,INE138Y01010,KFINTECH 27 JAN 2026 PE 760.00_20260127_PE_760,XX
+N,D,36354,HDFCAMC 27 JAN 2026 CE 2480.00,2026-01-27,CE,2480,HDFCAMC 27 JAN 2026 CE 2480.00,0.05,300,9000,1,HDFCAMC,N,INE127D01025,HDFCAMC 27 JAN 2026 CE 2480.00_20260127_CE_2480,XX
+N,D,36355,HDFCAMC 27 JAN 2026 PE 2480.00,2026-01-27,PE,2480,HDFCAMC 27 JAN 2026 PE 2480.00,0.05,300,9000,1,HDFCAMC,N,INE127D01025,HDFCAMC 27 JAN 2026 PE 2480.00_20260127_PE_2480,XX
+N,D,36356,ALKEM 30 DEC 2025 CE 7350.00,2025-12-30,CE,7350,ALKEM 30 DEC 2025 CE 7350.00,0.05,125,5000,1,ALKEM,N,INE540L01014,ALKEM 30 DEC 2025 CE 7350.00_20251230_CE_7350,XX
+N,D,36357,ALKEM 30 DEC 2025 PE 7350.00,2025-12-30,PE,7350,ALKEM 30 DEC 2025 PE 7350.00,0.05,125,5000,1,ALKEM,N,INE540L01014,ALKEM 30 DEC 2025 PE 7350.00_20251230_PE_7350,XX
+N,D,99418,IDFCFIRSTB 30 DEC 2025 CE 59.00,2025-12-30,CE,59,IDFCFIRSTB 30 DEC 2025 CE 59.00,0.01,9275,278250,1,IDFCFIRSTB,N,INE092T01019,IDFCFIRSTB 30 DEC 2025 CE 59.00_20251230_CE_59,XX
+N,D,99419,IDFCFIRSTB 30 DEC 2025 PE 59.00,2025-12-30,PE,59,IDFCFIRSTB 30 DEC 2025 PE 59.00,0.01,9275,278250,1,IDFCFIRSTB,N,INE092T01019,IDFCFIRSTB 30 DEC 2025 PE 59.00_20251230_PE_59,XX
+N,D,49508,BANKNIFTY 30 DEC 2025,2025-12-30,XX,0,BANKNIFTY 30 DEC 2025,0.2,35,595,1,BANKNIFTY,Y,BANKNIFTY,BANKNIFTY 30 DEC 2025_20251230,XX
+N,D,49509,KAYNES 27 JAN 2026,2026-01-27,XX,0,KAYNES 27 JAN 2026,0.5,100,4000,1,KAYNES,N,INE918Z01012,KAYNES 27 JAN 2026_20260127,XX
+N,D,49510,KEI 27 JAN 2026,2026-01-27,XX,0,KEI 27 JAN 2026,0.1,175,5250,1,KEI,N,INE878B01027,KEI 27 JAN 2026_20260127,XX
+N,D,49518,KFINTECH 27 JAN 2026,2026-01-27,XX,0,KFINTECH 27 JAN 2026,0.1,500,20000,1,KFINTECH,N,INE138Y01010,KFINTECH 27 JAN 2026_20260127,XX
+N,D,49521,FINNIFTY 30 DEC 2025,2025-12-30,XX,0,FINNIFTY 30 DEC 2025,0.1,65,1170,1,FINNIFTY,N,FINNIFTY,FINNIFTY 30 DEC 2025_20251230,XX
+N,D,49522,MIDCPNIFTY 30 DEC 2025,2025-12-30,XX,0,MIDCPNIFTY 30 DEC 2025,0.05,140,2800,1,MIDCPNIFTY,N,MIDCPNIFTY,MIDCPNIFTY 30 DEC 2025_20251230,XX
+N,D,49523,KOTAKBANK 27 JAN 2026,2026-01-27,XX,0,KOTAKBANK 27 JAN 2026,0.1,400,12000,1,KOTAKBANK,N,INE237A01028,KOTAKBANK 27 JAN 2026_20260127,XX
+N,D,49525,KPITTECH 27 JAN 2026,2026-01-27,XX,0,KPITTECH 27 JAN 2026,0.1,425,21250,1,KPITTECH,N,INE04I401011,KPITTECH 27 JAN 2026_20260127,XX
+N,D,49543,NIFTY 30 DEC 2025,2025-12-30,XX,0,NIFTY 30 DEC 2025,0.1,75,1800,1,NIFTY,Y,NIFTY,NIFTY 30 DEC 2025_20251230,XX
+N,D,49544,NIFTYNXT50 30 DEC 2025,2025-12-30,XX,0,NIFTYNXT50 30 DEC 2025,0.2,25,600,1,NIFTYNXT50,N,NIFTYNXT50,NIFTYNXT50 30 DEC 2025_20251230,XX
+N,D,49545,360ONE 30 DEC 2025,2025-12-30,XX,0,360ONE 30 DEC 2025,0.1,500,20000,1,360ONE,N,INE466L01038,360ONE 30 DEC 2025_20251230,XX
+N,D,49548,ABB 30 DEC 2025,2025-12-30,XX,0,ABB 30 DEC 2025,0.5,125,5000,1,ABB,N,INE117A01022,ABB 30 DEC 2025_20251230,XX</textarea
+		>
+		<button id="5paisa_NFO_Cta">Print NFO formated</button>
+		<hr />
+		<hr />
+		<h2>CDS</h2>
+		<a href="https://openapi.5paisa.com/VendorsAPI/Service1.svc/ScripMaster/segment/ncd_fo">CDS master data</a>
+		<textarea class="sampleDataInp" id="txtDataInp_5paisa_CDS" name="txtDataInp_5paisa_CDS">
+Exch,ExchType,ScripCode,Name,Expiry,ScripType,StrikeRate,FullName,TickSize,LotSize,QtyLimit,Multiplier,SymbolRoot,BOCOAllowed,ISIN,ScripData,Series
+N,U,1001,EURINR 09 JAN 2026 CE 108.2500,2026-01-09,CE,108.25,EURINR 09 JAN 2026 CE 108.2500,0.0025,1,0,1,EURINR,N,EURINR,EURINR 09 JAN 2026 CE 108.2500_20260109_CE_108.25,XX
+N,U,1002,USDINR 12 DEC 2025 CE 94.2500,2025-12-12,CE,94.25,USDINR 12 DEC 2025 CE 94.2500,0.0025,1,0,1,USDINR,N,USDINR,USDINR 12 DEC 2025 CE 94.2500_20251212_CE_94.25,XX
+N,U,1003,USDINR 12 DEC 2025 PE 94.2500,2025-12-12,PE,94.25,USDINR 12 DEC 2025 PE 94.2500,0.0025,1,0,1,USDINR,N,USDINR,USDINR 12 DEC 2025 PE 94.2500_20251212_PE_94.25,XX
+N,U,1004,91DTB 25 MAR 2026,2026-03-25,XX,0,91DTB 25 MAR 2026,0.0025,1,0,1,91DTB,N,91DTB,91DTB 25 MAR 2026_20260325,XX
+N,U,1005,EURINR 16 JAN 2026,2026-01-16,XX,0,EURINR 16 JAN 2026,0.0025,1,0,1,EURINR,N,EURINR,EURINR 16 JAN 2026_20260116,XX
+N,U,1006,EURINR 09 JAN 2026 PE 108.2500,2026-01-09,PE,108.25,EURINR 09 JAN 2026 PE 108.2500,0.0025,1,0,1,EURINR,N,EURINR,EURINR 09 JAN 2026 PE 108.2500_20260109_PE_108.25,XX
+N,U,1007,EURINR 25 FEB 2026,2026-02-25,XX,0,EURINR 25 FEB 2026,0.0025,1,0,1,EURINR,N,EURINR,EURINR 25 FEB 2026_20260225,XX
+N,U,1011,USDINR 20 FEB 2026 CE 90.8750,2026-02-20,CE,90.875,USDINR 20 FEB 2026 CE 90.8750,0.0025,1,0,1,USDINR,N,USDINR,USDINR 20 FEB 2026 CE 90.8750_20260220_CE_90.875,XX
+N,U,1012,EURINR 19 DEC 2025,2025-12-19,XX,0,EURINR 19 DEC 2025,0.0025,1,0,1,EURINR,N,EURINR,EURINR 19 DEC 2025_20251219,XX
+N,U,1013,EURUSD 25 FEB 2026,2026-02-25,XX,0,EURUSD 25 FEB 2026,0.0001,1,0,1,EURUSD,N,EURUSD,EURUSD 25 FEB 2026_20260225,XX</textarea
+		>
+		<button id="5paisa_CDS_Cta">Print CDS formated</button>
+		<hr />
+		<hr />
+		<h2>MCX</h2>
+		<a href="https://openapi.5paisa.com/VendorsAPI/Service1.svc/ScripMaster/segment/mcx_fo">MCX master data</a>
+		<textarea class="sampleDataInp" id="txtDataInp_5paisa_MCX" name="txtDataInp_5paisa_MCX">
+Exch,ExchType,ScripCode,Name,Expiry,ScripType,StrikeRate,FullName,TickSize,LotSize,QtyLimit,Multiplier,SymbolRoot,BOCOAllowed,ISIN,ScripData,Series
+M,D,204262,CARDAMOM 01 JAN 2038,2038-01-01,XX,0,EX VANDANMEDU,0.25,500,5000,500,CARDAMOM,Y,,CARDAMOM 01 JAN 2038_20380101,  
+M,D,204439,CORIANDER 01 JAN 2038,2038-01-01,XX,0,EX - KOTA MANDI,1,10,80,100,CORIANDER,Y,,CORIANDER 01 JAN 2038_20380101,  
+M,D,204532,MENTHAOIL 01 JAN 2038,2038-01-01,XX,0,EX - CHANDAUSI,0.1,360,18000,360,MENTHAOIL,Y,,MENTHAOIL 01 JAN 2038_20380101,  
+M,D,204729,CHANADEL 01 JAN 2038,2038-01-01,XX,0,EX - DELHI,1,10,500,100,CHANADEL,Y,,CHANADEL 01 JAN 2038_20380101,  
+M,D,204855,WHEAT 01 JAN 2038,2038-01-01,XX,0,WHEAT EX-DELHI,0.1,10,500,100,WHEAT,Y,,WHEAT 01 JAN 2038_20380101,  
+M,D,204932,STEELGZB 01 JAN 2038,2038-01-01,XX,0,EX WAREHOUSE GHAZIABAD,10,10,300,10,STEELGZB,Y,,STEELGZB 01 JAN 2038_20380101,  
+M,D,205181,SOYABEAN 01 JAN 2038,2038-01-01,XX,0,EX - INDORE,0.5,10,500,100,SOYABEAN,Y,,SOYABEAN 01 JAN 2038_20380101,  
+M,D,215249,NICKELAUC 01 JAN 2038,2038-01-01,XX,0,EX-WAREHOUSETHANEDIST.,0.1,1500,24000,1500,NICKELAUC,Y,,NICKELAUC 01 JAN 2038_20380101,  
+M,D,448166,KAPAS 27 FEB 2026,2026-02-27,XX,0,EX WAREHOUSE RAJKOT,0.5,4,200,200,KAPAS,Y,,KAPAS 27 FEB 2026_20260227,  
+M,D,449534,GOLD 05 FEB 2026,2026-02-05,XX,0,GOLD 995 EX AHMEDABAD,1,1,10,100,GOLD,Y,,GOLD 05 FEB 2026_20260205,  
+M,D,449535,GOLD 27 JAN 2026 CE 88600.00,2026-01-27,CE,88600,GOLD 995,0.5,1,100,100,GOLD,Y,,GOLD 27 JAN 2026 CE 88600.00_20260127_CE_88600,  
+M,D,449536,GOLD 27 JAN 2026 PE 88600.00,2026-01-27,PE,88600,GOLD 995,0.5,1,100,100,GOLD,Y,,GOLD 27 JAN 2026 PE 88600.00_20260127_PE_88600,  
+M,D,449537,GOLD 31 DEC 2025 CE 88600.00,2025-12-31,CE,88600,GOLD 995 EX AHMEDABAD,0.5,1,100,100,GOLD,Y,,GOLD 31 DEC 2025 CE 88600.00_20251231_CE_88600,  
+M,D,449538,GOLD 31 DEC 2025 PE 88600.00,2025-12-31,PE,88600,GOLD 995 EX AHMEDABAD,0.5,1,100,100,GOLD,Y,,GOLD 31 DEC 2025 PE 88600.00_20251231_PE_88600, </textarea
+		>
+		<button id="5paisa_MCX_Cta">Print MCX formated</button>
+		<script>
+			((d) => {
+				const nfoCtaBtn = d.getElementById('5paisa_NFO_Cta'),
+					cdsCtaBtn = d.getElementById('5paisa_CDS_Cta'),
+					mcxCtaBtn = d.getElementById('5paisa_MCX_Cta');
+				nfoCtaBtn.onclick = function () {
+					parsNfoData(d.getElementById('txtDataInp_5paisa_NFO').value, 'NFO');
+				};
+				cdsCtaBtn.onclick = function () {
+					parsNfoData(d.getElementById('txtDataInp_5paisa_CDS').value, 'CDS');
+				};
+				mcxCtaBtn.onclick = function () {
+					parsNfoData(d.getElementById('txtDataInp_5paisa_MCX').value, 'MCX');
+				};
+
+				function parsNfoData(txtData, conosleTitle) {
+					// const txtData = d.getElementById('txtDataInp_5paisa_NFO').value;
+					const lines = txtData.split('\n');
+					const headerLine = lines.shift(); //remove header line from array
+					const consoleTablePrintAry_NFO = [];
+
+					//Exch,ExchType,ScripCode,Name,Expiry,ScripType,StrikeRate,FullName,TickSize,LotSize,QtyLimit,Multiplier,SymbolRoot,BOCOAllowed,ISIN,ScripData,Series
+					//Expiry -- 4
+					//ScripType -- 5
+					//StrikeRate -- 6
+					lines.forEach((line) => {
+						const columns = line.split(',');
+						if (columns.length > 2) {
+							if (columns[5] === 'CE') {
+								consoleTablePrintAry_NFO.push({
+									key: `${columns[12]}|C|${columns[4]}|${columns[6]}`, //symbol|C|expiry|strike
+									// value: `${columns[2]},${columns[7]},${columns[9]}`, //token,full-name,lotsize
+									value: `${columns[2]},${columns[9]}`, //token,lotsize
+								});
+							} else if (columns[5] === 'PE') {
+								consoleTablePrintAry_NFO.push({
+									key: `${columns[12]}|P|${columns[4]}|${columns[6]}`, //symbol|P|expiry|strike
+									value: `${columns[2]},${columns[9]}`, //token,lotsize
+								});
+							} else if (columns[5] === 'XX') {
+								consoleTablePrintAry_NFO.push({
+									key: `${columns[12]}|F|${columns[4]}|`, //symbol|F|expiry|
+									value: `${columns[2]},${columns[9]}`, //token,lotsize
+								});
+							}
+							// }
+						}
+					});
+					// console.log(`===== ${conosleTitle} =====`);
+					// console.log(`\x1b[43m\x1b[30m===== ${conosleTitle} =====\x1b[0m`);
+					console.log('%c%s', 'font-weight:bold;color:black;background:yellow;padding:6px 60px;font-size:16px;margin-top:60px', conosleTitle);
+					console.table(consoleTablePrintAry_NFO);
+				}
+			})(document);
+		</script>
+	</body>
+</html>

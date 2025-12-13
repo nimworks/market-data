@@ -67,11 +67,22 @@ jobs:
               #   node src/myFile1.js
               #   node src/myFile2.js
               # Run two scripts in parallel
-              run: |
-                  node src/upstox/upstoxMasterData.js &
-                  node src/angelOne/angelOneMasterData.js &
-                  wait
+              #   run: |
+              #       node src/upstox/upstoxMasterData.js &
+              #       node src/angelOne/angelOneMasterData.js &
+              #       wait
               # The & operator runs the commands in the background. wait ensures that the GitHub Action waits for both processes to complete before moving to the next step.
+
+              # Run two scripts in parallel and watch for thier exit status to know if any script threw an error
+              # Captures their process IDs (pid1 and pid2).
+              # Uses wait to track each process and fails if either exits with an error.
+              run: |
+                  node src/upstox/upstoxMasterData.js & pid1=$!
+                  node src/angelOne/angelOneMasterData.js & pid2=$!
+                  node src/5paisa/5paisaMasterData.js & pid3=$!
+                  wait $pid1 || exit 1
+                  wait $pid2 || exit 1
+                  wait $pid3 || exit 1
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
