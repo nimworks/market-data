@@ -99,11 +99,22 @@ function processDataAndWriteFile(rawData) {
 				this.push(null); // Signal the end of the stream
 			},
 		});
-		const NSE_outputPath = path.resolve(__dirname, '../../public/angelOne/NSE.csv.gz'),
-			BSE_outputPath = path.resolve(__dirname, '../../public/angelOne/BSE.csv.gz'),
-			NFO_outputPath = path.resolve(__dirname, '../../public/angelOne/NFO.csv.gz'),
-			CDS_outputPath = path.resolve(__dirname, '../../public/angelOne/CDS.csv.gz'),
-			MCX_outputPath = path.resolve(__dirname, '../../public/angelOne/MCX.csv.gz');
+		// const NSE_outputPath = path.resolve(__dirname, '../../public/angelOne/NSE.csv.gz'),
+		// 	BSE_outputPath = path.resolve(__dirname, '../../public/angelOne/BSE.csv.gz'),
+		// 	NFO_outputPath = path.resolve(__dirname, '../../public/angelOne/NFO.csv.gz'),
+		// 	CDS_outputPath = path.resolve(__dirname, '../../public/angelOne/CDS.csv.gz'),
+		// 	MCX_outputPath = path.resolve(__dirname, '../../public/angelOne/MCX.csv.gz');
+
+		const outputDirPath = path.resolve(__dirname, '../../public/angelOne');
+		// Ensure directory exists
+		if (!fs.existsSync(outputDirPath)) {
+			fs.mkdirSync(outputDirPath, { recursive: true });
+		}
+		const NSE_outputPath = path.join(outputDirPath, 'NSE.csv.gz'),
+			BSE_outputPath = path.join(outputDirPath, 'BSE.csv.gz'),
+			NFO_outputPath = path.join(outputDirPath, 'NFO.csv.gz'),
+			CDS_outputPath = path.join(outputDirPath, 'CDS.csv.gz'),
+			MCX_outputPath = path.join(outputDirPath, 'MCX.csv.gz');
 
 		const NSE_gzip = zlib.createGzip(),
 			BSE_gzip = zlib.createGzip(),

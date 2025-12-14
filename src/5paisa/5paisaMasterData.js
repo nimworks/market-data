@@ -56,8 +56,16 @@ try {
 function fetchAndProcessData(segment, headerColumnTitles, csvColumnsFilterFn, zippedOutputFileName) {
 	// function fetchAndProcessData(url, csvColumnsFilterFn) {
 	return new Promise(function (resolve, reject) {
+		const outputDirPath = path.resolve(__dirname, '../../public/5paisa');
+		const outputFilePath = path.join(outputDirPath, zippedOutputFileName);
+		// Ensure directory exists
+		if (!fs.existsSync(outputDirPath)) {
+			fs.mkdirSync(outputDirPath, { recursive: true });
+		}
+
 		const gzip = zlib.createGzip();
-		const outStream = fs.createWriteStream(path.resolve(__dirname, `../../public/5paisa/${zippedOutputFileName}`));
+		// const outStream = fs.createWriteStream(path.resolve(__dirname, `../../public/5paisa/${zippedOutputFileName}`));
+		const outStream = fs.createWriteStream(outputFilePath);
 		gzip.pipe(outStream);
 
 		// When you use gzip.pipe(outStream), Node automatically calls outStream.end() when the gzip stream finishes.

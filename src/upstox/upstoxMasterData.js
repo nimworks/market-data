@@ -4,6 +4,8 @@ const https = require('https');
 const path = require('path');
 const { Readable } = require('stream');
 
+const outputDirPath = path.resolve(__dirname, '../../public/upstox');
+
 //https://upstox.com/developer/api-documentation/instruments#sample-json-object
 //https://upstox.com/developer/api-documentation/appendix/field-pattern/
 
@@ -187,9 +189,18 @@ function nseJson_to_nseNfoCds_csv(jsonDataStr) {
 				this.push(null); // Signal the end of the stream
 			},
 		});
-		const NSE_outputPath = path.resolve(__dirname, '../../public/upstox/NSE.csv.gz'),
-			NFO_outputPath = path.resolve(__dirname, '../../public/upstox/NFO.csv.gz'),
-			CDS_outputPath = path.resolve(__dirname, '../../public/upstox/CDS.csv.gz');
+		// const NSE_outputPath = path.resolve(__dirname, '../../public/upstox/NSE.csv.gz'),
+		// 	NFO_outputPath = path.resolve(__dirname, '../../public/upstox/NFO.csv.gz'),
+		// 	CDS_outputPath = path.resolve(__dirname, '../../public/upstox/CDS.csv.gz');
+
+		// const outputDirPath = path.resolve(__dirname, '../../public/upstox');
+		// Ensure directory exists
+		if (!fs.existsSync(outputDirPath)) {
+			fs.mkdirSync(outputDirPath, { recursive: true });
+		}
+		const NSE_outputPath = path.join(outputDirPath, 'NSE.csv.gz'),
+			NFO_outputPath = path.join(outputDirPath, 'NFO.csv.gz'),
+			CDS_outputPath = path.join(outputDirPath, 'CDS.csv.gz');
 
 		const NSE_gzip = zlib.createGzip(),
 			NFO_gzip = zlib.createGzip(),
@@ -257,7 +268,14 @@ function bseJson_to_csv(jsonDataStr) {
 		});
 
 		const gzip = zlib.createGzip();
-		const writeStream = fs.createWriteStream(path.resolve(__dirname, '../../public/upstox/BSE.csv.gz'));
+		// const writeStream = fs.createWriteStream(path.resolve(__dirname, '../../public/upstox/BSE.csv.gz'));
+
+		// const outputDirPath = path.resolve(__dirname, '../../public/upstox');
+		// Ensure directory exists
+		if (!fs.existsSync(outputDirPath)) {
+			fs.mkdirSync(outputDirPath, { recursive: true });
+		}
+		const writeStream = fs.createWriteStream(path.join(outputDirPath, 'BSE.csv.gz'));
 
 		writeStream.on('finish', () => {
 			console.log('BSE.csv.gz file created successfully');
@@ -318,7 +336,13 @@ function mcxJson_to_csv(jsonDataStr) {
 		});
 
 		const gzip = zlib.createGzip();
-		const writeStream = fs.createWriteStream(path.resolve(__dirname, '../../public/upstox/MCX.csv.gz'));
+		// const writeStream = fs.createWriteStream(path.resolve(__dirname, '../../public/upstox/MCX.csv.gz'));
+		// const outputDirPath = path.resolve(__dirname, '../../public/upstox');
+		// Ensure directory exists
+		if (!fs.existsSync(outputDirPath)) {
+			fs.mkdirSync(outputDirPath, { recursive: true });
+		}
+		const writeStream = fs.createWriteStream(path.join(outputDirPath, 'MCX.csv.gz'));
 
 		writeStream.on('finish', () => {
 			console.log('MCX.csv.gz file created successfully');
